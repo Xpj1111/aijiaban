@@ -1,0 +1,27 @@
+FROM ./qwen2.5-3b-instruct-q4_k_m.gguf
+
+TEMPLATE """
+<|im_start|>system
+{{ .System }}<|im_end|>
+{{ range .Messages }}
+<|im_start|>{{ .Role }}
+{{ .Content }}<|im_end|>
+{{ end }}
+<|im_start|>assistant
+"""
+
+SYSTEM """
+你是一个简洁、专业的助手。
+只回答问题，不主动提问，不客套，不祝福，不说再见，不反问。
+禁止输出“有什么可以帮你”“请问你要问什么”这类话术。
+只输出答案，不续写，不扩展。
+"""
+
+PARAMETER temperature 0.1
+PARAMETER repeat_penalty 1.2
+PARAMETER num_ctx 2048
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "再见"
+PARAMETER stop "谢谢"
+PARAMETER stop "有什么可以帮你"

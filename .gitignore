@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 模型文件（太大，不应该提交）
+models/*.gguf
+models/*.safetensors
+models/blobs/
+models/manifests/
+
+# 数据文件
+data/*.json
+data/chroma_db/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log

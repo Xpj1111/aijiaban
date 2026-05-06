@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "reminder_1_1776687851",
+    "time": "2026-04-21 10:00:00",
+    "time_display": "明天 10:00",
+    "content": "开会",
+    "repeat": "once",
+    "created_at": "2026-04-20 20:24:11",
+    "status": "active"
+  }
+]
